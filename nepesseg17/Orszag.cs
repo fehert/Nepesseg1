@@ -14,24 +14,24 @@ namespace nepesseg17
         public string Fovaros { get; private set; }
         public int FovarosNepesseg { get; private set; }
 
-        public Orszag(string orszagnev, int terulet, int nepesseg, string fovaros, int fovarosNepesseg)
-        {
-            Orszagnev = orszagnev;
-            Terulet = terulet;
-            Nepesseg = nepesseg;
-            Fovaros = fovaros;
-            FovarosNepesseg = fovarosNepesseg;
-        }
 
         public Orszag(string sor)
         {
-            // Ebben a konstruktorban is elvégezheti az adatsor felbontását!
-            // Ha nem ezt választja, akkor törölje ezt a konstruktort!
+            string[] adatok = sor.Split(';');
+            Orszagnev = adatok[0];
+            Terulet = int.Parse(adatok[1]);
+            if (adatok[2].Contains("g"))
+            {
+                string szorzas = adatok[2];
+                Nepesseg = int.Parse(szorzas.Substring(0, szorzas.Length - 1)) * 10000;
+            }
+            else
+            {
+                Nepesseg = int.Parse(adatok[2]);
+            }
+            Fovaros = adatok[3];
+            FovarosNepesseg = int.Parse(adatok[4]) * 1000;
         }
 
-        public override string ToString()
-        {
-            return "";
-        }
     }
 }

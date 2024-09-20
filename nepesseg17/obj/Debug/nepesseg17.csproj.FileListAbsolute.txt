@@ -1,0 +1,7 @@
+C:\Users\tamas\Nepesseg1\nepesseg17\bin\Debug\nepesseg17.exe.config
+C:\Users\tamas\Nepesseg1\nepesseg17\bin\Debug\nepesseg17.exe
+C:\Users\tamas\Nepesseg1\nepesseg17\bin\Debug\nepesseg17.pdb
+C:\Users\tamas\Nepesseg1\nepesseg17\obj\Debug\nepesseg17.csproj.AssemblyReference.cache
+C:\Users\tamas\Nepesseg1\nepesseg17\obj\Debug\nepesseg17.csproj.CoreCompileInputs.cache
+C:\Users\tamas\Nepesseg1\nepesseg17\obj\Debug\nepesseg17.exe
+C:\Users\tamas\Nepesseg1\nepesseg17\obj\Debug\nepesseg17.pdb
