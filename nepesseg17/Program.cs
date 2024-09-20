@@ -11,38 +11,49 @@ namespace nepesseg17
     {
         static void Main(string[] args)
         {
-             List<Orszag> orszagok = new List<Orszag>();
-             StreamReader sr = new StreamReader("adatok-utf8.txt");
-             sr.ReadLine();
-             while (!sr.EndOfStream)
-             {
-                    orszagok.Add(new Orszag(sr.ReadLine()));
-             }
-             Console.WriteLine("A beolvasott országok száma:"+orszagok.Count);
-             sr.Close();
-            foreach(var k in orszagok)
+            List<Orszag> orszagok = new List<Orszag>();
+            StreamReader sr = new StreamReader("adatok-utf8.txt");
+            sr.ReadLine();
+            while (!sr.EndOfStream)
+            {
+                orszagok.Add(new Orszag(sr.ReadLine()));
+            }
+            Console.WriteLine("A beolvasott országok száma:" + orszagok.Count);
+            sr.Close();
+            foreach (var k in orszagok)
             {
                 if (k.Orszagnev == "Kína")
                 {
-                    Console.WriteLine("Kína népsűrűsége:"+k.Neps()+"fő/km2");
+                    Console.WriteLine("Kína népsűrűsége:" + k.Neps() + "fő/km2");
                 }
             }
             int indiasz = 0;
             int kinasz = 0;
-            foreach(var v in orszagok)
+            foreach (var v in orszagok)
             {
-                if (v.Orszagnev=="India")
+                if (v.Orszagnev == "India")
                 {
                     indiasz = v.Nepesseg;
                 }
-                if (v.Orszagnev=="Kína")
+                if (v.Orszagnev == "Kína")
                 {
                     kinasz = v.Nepesseg;
                 }
             }
             int kulonbs = kinasz - indiasz;
-            Console.WriteLine("Ennyivel éltek többen kínába mint indiába:"+kulonbs);
-           Console.ReadLine();
+            Console.WriteLine("Ennyivel éltek többen kínába mint indiába:" + kulonbs);
+            int harmadik = 0;
+            for (int i = 0; i < orszagok.Count; i++)
+            {
+                if (orszagok[i].Orszagnev != "Kína" && orszagok[i].Orszagnev != "India" && orszagok[i].Nepesseg > orszagok[harmadik].Nepesseg)
+                {
+                    harmadik = i;
+                }
+            }
+            Console.WriteLine("A harmadik legnépesebb ország:" + orszagok[harmadik].Orszagnev);
+
+            Console.ReadLine();
+            
         }
     }
 }
