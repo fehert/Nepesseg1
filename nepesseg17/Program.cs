@@ -20,6 +20,13 @@ namespace nepesseg17
              }
              Console.WriteLine("A beolvasott országok száma:"+orszagok.Count);
              sr.Close();
+            foreach(var k in orszagok)
+            {
+                if (k.Orszagnev == "Kína")
+                {
+                    Console.WriteLine("Kína népsűrűsége:"+k.Neps()+"fő/km2");
+                }
+            }
            Console.ReadLine();
         }
     }

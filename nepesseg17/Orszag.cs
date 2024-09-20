@@ -32,6 +32,13 @@ namespace nepesseg17
             Fovaros = adatok[3];
             FovarosNepesseg = int.Parse(adatok[4]) * 1000;
         }
+        public int Neps()
+        {
+            int ns;
+            ns = Nepesseg / Terulet;
+
+            return ns;
+        }
 
     }
 }
