@@ -39,6 +39,16 @@ namespace nepesseg17
 
             return ns;
         }
-
+        public bool Megh()
+        {
+            if (Nepesseg * 0.3 <= FovarosNepesseg)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

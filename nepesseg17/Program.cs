@@ -51,8 +51,14 @@ namespace nepesseg17
                 }
             }
             Console.WriteLine("A harmadik legnépesebb ország:" + orszagok[harmadik].Orszagnev);
-
-            Console.ReadLine();
+            foreach (var x in orszagok)
+            {
+                if (x.Megh())
+                {
+                    Console.WriteLine(x.Orszagnev+" "+x.Fovaros);
+                }
+            }
+                Console.ReadLine();
             
         }
     }
